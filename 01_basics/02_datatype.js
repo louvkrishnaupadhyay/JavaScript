@@ -7,7 +7,6 @@ string => ""
 boolean => true/false
 null => empty
 undefined
-
 object
 */
 
