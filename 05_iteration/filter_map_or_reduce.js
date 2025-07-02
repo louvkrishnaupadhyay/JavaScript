@@ -48,4 +48,11 @@ const books = [
   userBooks = books.filter((bk => {
     return bk.edition > 2000 && bk.edition < 2010
 }))
-  console.log(userBooks);
+let lk = []
+books.forEach((bk) => {
+    if(bk.edition > 2000){
+    lk.push(bk)
+    }
+})
+//   console.log(userBooks);
+  console.log(lk);
