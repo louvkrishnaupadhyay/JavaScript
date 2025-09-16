@@ -1,0 +1,69 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project 1</title>
+        <style>
+            h2{
+                text-align: center;
+            }
+            #container{
+                display: flex;
+                justify-content: center;
+            }
+            .button{
+                height: 100px;
+                width: 100px;
+                margin-top: 3%;
+                margin-left: 2px;            }
+            #gray{
+                background-color: gray;
+                border: 2px solid black;
+            }
+            #green{
+                background-color: green;
+                border: 2px solid black;
+            }
+            #blue{
+                background-color: blue;
+                border: 2px solid black;
+            }
+            #red{
+                background-color: red;
+                border: 2px solid black;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2>Color Switcher</h2>
+    <div id="container">
+        <div class="button" id="gray"></div>
+        <div class="button" id="green"></div>
+        <div class="button" id="blue"></div>
+        <div class="button" id="red"></div>
+    </div>
+    </body>
+    <script>
+        const buttons = document.querySelectorAll('.button');
+        const body = document.querySelector('body')
+
+        buttons.forEach(function (button){
+            button.addEventListener('click', function(e){
+                if(e.target.id === 'gray'){
+                    body.style.backgroundColor = e.target.id;
+                }
+                if(e.target.id === 'green'){
+                    body.style.backgroundColor = e.target.id;
+                }
+                if(e.target.id === 'blue'){
+                    body.style.backgroundColor = e.target.id;
+                }
+                if(e.target.id === 'red'){
+                    body.style.backgroundColor = e.target.id;
+                }
+            });
+        });
+    </script>
+</html>
