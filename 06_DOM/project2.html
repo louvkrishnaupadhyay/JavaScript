@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 BMI CALCULATOR</title>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+    <form>
+    <p><label>Enter your Height in cm</label><input type="text" id="height"></p>
+    <p><label>Enter your Weight in kg</label><input type="text" id="weight"></p>
+
+    <button>Calculate</button>
+    <div id="result"></div>
+    <div id="guide">
+        <h2>BMI Guide</h2>
+    <pre>Underweight	18.4 and below	Malnutrition risk<br>
+Normal weight	18.5 - 24.9	Low risk<br>
+Overweight	25 - 29.9	Enchanced risk</pre>
+</div>
+</form>
+</body>
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e){
+        e.preventDefault();
+
+        const height = parseInt(document.querySelector('#height').value);
+        const weight = parseInt(document.querySelector('#weight').value);
+
+        const result = document.querySelector('#result');
+
+        if( height < 0 || isNaN(height)){
+            result.innerHTML = `please give the valid height `;
+        }
+        else if( weight < 0 || isNaN(weight)){
+            result.innerHTML = `please enter the valid weight `;
+        }
+        else{
+            const bmi = (weight / ((height*height) / 10000)).toFixed(2);
+            
+            let massage = '';
+            if(bmi <= 18.4){
+                massage = `you are under weight`
+            }
+            else if(bmi >= 18.5 && bmi <= 24.9){
+                massage = `you weight is normal`
+            }
+            if(bmi >= 25){
+                massage = `you are over weight`
+            }
+            result.innerHTML = `<span>${bmi} and ${massage}</span>`;
+        }
+    });
+</script>
+</html>
